@@ -3,18 +3,19 @@
 int		main(void){
 	ClapTrap a;
 	ClapTrap b("Trap");
-	ClapTrap c("Another Trap");
+	ClapTrap c("Another Trap", 20, 20, 5);
 
-	a = c;
+	a.setName("Wrap");
+	std::cout << "Name: " + a.getName() << ", HP: " << a.getHitPoints() << ", EP: " <<a.getEnergyPoints() << ", AD: " << a.getAttackDamage() << std::endl;
+	std::cout << "Name: " + b.getName() << ", HP: " << b.getHitPoints() << ", EP: " <<b.getEnergyPoints() << ", AD: " << b.getAttackDamage() << std::endl;
+	std::cout << "Name: " + c.getName() << ", HP: " << c.getHitPoints() << ", EP: " <<c.getEnergyPoints() << ", AD: " << c.getAttackDamage() << std::endl;
 
-	b.attack(a.getName());
-	b.takeDamage(2);
-	b.beRepaired(2);
-	std::cout << b.getName() << " has " << b.getHitPoints() << " hit points" << std::endl;
-	b.takeDamage(5);
-	b.beRepaired(10);
-	std::cout << b.getName() << " has " << b.getHitPoints() << " hit points" << std::endl;
-	b.takeDamage(20);
-	b.attack("someone");
+	c.attack(b.getName());
+	c.takeDamage(10);
+	c.beRepaired(20);
+	c.takeDamage(30);
+	c.beRepaired(40);
+	// for (int i = 0; i < 12; i++)
+	// 	b.attack("Vaggos");
 	return (0);
 }

@@ -2,7 +2,7 @@
 
 // DEFAULT
 
-ClapTrap::ClapTrap(): _name(""), _hitPoints(MAX_HP), _energyPoints(MAX_EP), _attackDamage(BASE_AD) {
+ClapTrap::ClapTrap(): _hitPoints(MAX_HP), _energyPoints(MAX_EP), _attackDamage(BASE_AD) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
