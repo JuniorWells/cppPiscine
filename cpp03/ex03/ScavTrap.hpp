@@ -7,7 +7,7 @@
 #define EP 50
 #define AD 20
 
-class ScavTrap : public ClapTrap{
+class ScavTrap : public virtual ClapTrap{
 
 	public:
 

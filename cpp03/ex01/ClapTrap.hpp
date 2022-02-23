@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-#define MAX_HP 10
-#define MAX_EP 10
-#define BASE_AD 0
+#define MAX_HP 100
+#define MAX_EP 50
+#define BASE_AD 20
 
 class ClapTrap {
 	

@@ -77,7 +77,7 @@ void	ClapTrap::setAttackDamage(int ad){
 
 void		ClapTrap::attack(const std::string & target){
 	if (this->_hitPoints > 0 && this->_energyPoints > 0){
-		std::cout << this->_name + " attacks " + target + ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " + this->_name + " attacks " + target + ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 		this->_energyPoints--;
 	} else {
 		if (this->_hitPoints <= 0)
@@ -89,7 +89,7 @@ void		ClapTrap::attack(const std::string & target){
 
 void		ClapTrap::takeDamage(unsigned int amount){
 	if (this->_hitPoints > 0){
-		std::cout << this->_name + " took " << amount << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " + this->_name + " took " << amount << " points of damage!" << std::endl;
 		this->_hitPoints -= amount;
 	} else {
 		std::cout << this->_name << " does not have enough HP to perform any kind of action, not even accept beating." << std::endl;
@@ -98,7 +98,7 @@ void		ClapTrap::takeDamage(unsigned int amount){
 
 void		ClapTrap::beRepaired(unsigned int amount){
 	if (this->_hitPoints > 0 && this->_energyPoints > 0){
-		std::cout << this->_name + " tried to heal for " << amount << " hit points!" << std::endl;
+		std::cout << "ClapTrap " + this->_name + " tried to heal for " << amount << " hit points!" << std::endl;
 		this->_energyPoints--;
 		this->_hitPoints += amount;
 		if (this->_hitPoints > MAX_HP) { this->_hitPoints = MAX_HP ;}

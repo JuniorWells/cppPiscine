@@ -7,7 +7,7 @@ FragTrap::FragTrap(){
 	this->setName("");
 	this->setHitPoints(HP);
 	this->setEnergyPoints(EP);
-	this->setAttackDamage(AD);
+	this->setAttackDamage(30);
 }
 
 FragTrap::FragTrap(std::string name) {
@@ -15,7 +15,7 @@ FragTrap::FragTrap(std::string name) {
 	this->setName(name);
 	this->setHitPoints(HP);
 	this->setEnergyPoints(EP);
-	this->setAttackDamage(AD);
+	this->setAttackDamage(30);
 }
 
 FragTrap::FragTrap(std::string name, int hp, int ep, int ad) {

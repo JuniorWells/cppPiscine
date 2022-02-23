@@ -48,7 +48,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & other) {
 
 void	ScavTrap::attack(const std::string & target) {
 	if (this->getHitPoints() > 0 && this->getEnergyPoints() > 0){
-		std::cout << "ScavTrap" + this->getName() + " attacks " + target + ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " + this->getName() + " attacks " + target + ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 		this->setEnergyPoints(this->getEnergyPoints() - 1);
 	} else {
 		if (this->getHitPoints() <= 0)
