@@ -21,12 +21,6 @@ class FragTrap : public virtual ClapTrap{
 		void		attack(const std::string & target);
 		void		highFiveGuys(void) const;
 
-	private:
-
-		std::string _name;
-		int			_hitPoints;
-		int			_energyPoints;
-		int			_attackDamage;
 };
 
 #endif

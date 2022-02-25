@@ -5,8 +5,7 @@
 #include <string>
 
 #define MAX_HP 100
-#define MAX_EP 50
-#define BASE_AD 30
+
 
 class ClapTrap {
 	

@@ -14,7 +14,6 @@ class DiamondTrap : public ScavTrap, FragTrap {
 
 		DiamondTrap& operator=(DiamondTrap const & src);
 
-		//virtual void			attack(const std::string & target);
 		using					ScavTrap::attack;
 		virtual void			takeDamage(unsigned int amount);
 		virtual void			beRepaired(unsigned int amount);

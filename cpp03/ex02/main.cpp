@@ -3,16 +3,24 @@
 int		main(void){
 	FragTrap a;
 	FragTrap b("Trap");
-	FragTrap c("Another Trap", 20, 20, 5);
 
-	a.setName("Wrap");
-	std::cout << "Name: " + a.getName() << ", HP: " << a.getHitPoints() << ", EP: " << a.getEnergyPoints() << ", AD: " << a.getAttackDamage() << std::endl;
-	std::cout << "Name: " + b.getName() << ", HP: " << b.getHitPoints() << ", EP: " << b.getEnergyPoints() << ", AD: " << b.getAttackDamage() << std::endl;
-	std::cout << "Name: " + c.getName() << ", HP: " << c.getHitPoints() << ", EP: " << c.getEnergyPoints() << ", AD: " << c.getAttackDamage() << std::endl;
+	a = b;
+	std::cout << "HP: " << a.getHitPoints() << std::endl;
+	std::cout << "EP: " << a.getEnergyPoints() << std::endl;
+	std::cout << "AD: " << a.getAttackDamage() << std::endl;
 
+	a.attack("someone");
+	a.takeDamage(5);
+	a.beRepaired(2);
 
-	a.highFiveGuys();
-	a.attack("vaggos");
-	a.takeDamage(20);
+	FragTrap c(a);
+	std::cout << "HP: " << c.getHitPoints() << std::endl;
+	std::cout << "EP: " << c.getEnergyPoints() << std::endl;
+	std::cout << "AD: " << c.getAttackDamage() << std::endl;
+
+	c.highFiveGuys();
+	c.takeDamage(200);
+	c.takeDamage(2);
+	c.highFiveGuys();
 	return (0);
 }

@@ -4,8 +4,8 @@
 #include <iostream>
 
 #define MAX_HP 100
-#define MAX_EP 100
-#define BASE_AD 30
+#define MAX_EP 50
+#define BASE_AD 20
 
 class ClapTrap {
 	
@@ -33,7 +33,7 @@ class ClapTrap {
 		int				getEnergyPoints(void) const;
 		int				getAttackDamage(void) const;
 
-	private:
+	protected:
 
 		std::string _name;
 		int			_hitPoints;

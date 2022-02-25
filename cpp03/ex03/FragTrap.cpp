@@ -5,16 +5,16 @@
 FragTrap::FragTrap(){
 	std::cout << "FragTrap constructor called" << std::endl;
 	this->setName("");
-	this->setHitPoints(HP);
-	this->setEnergyPoints(EP);
+	this->setHitPoints(MAX_HP);
+	this->setEnergyPoints(100);
 	this->setAttackDamage(30);
 }
 
 FragTrap::FragTrap(std::string name) {
 	std::cout << "Name FragTrap constructor called" << std::endl;
 	this->setName(name);
-	this->setHitPoints(HP);
-	this->setEnergyPoints(EP);
+	this->setHitPoints(MAX_HP);
+	this->setEnergyPoints(100);
 	this->setAttackDamage(30);
 }
 
@@ -59,5 +59,8 @@ void	FragTrap::attack(const std::string & target) {
 }
 
 void	FragTrap::highFiveGuys(void) const {
-	std::cout << this->getName() << "High five guys! :)" << std::endl;
+	if (this->getHitPoints() > 0)
+		std::cout << this->getName() << "High five guys! :)" << std::endl;
+	else
+		std::cout << this->getName() + " is dead." << std::endl;
 }

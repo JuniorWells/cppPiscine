@@ -12,7 +12,7 @@ $(NAME):
 	$(CC) $(FLAGS) $(SRC) -o $@
 
 clean:
-	$(RM) *.c
+	$(RM) *.o
 
 fclean:
 	$(RM) $(NAME)

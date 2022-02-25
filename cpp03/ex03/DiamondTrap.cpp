@@ -72,7 +72,11 @@ void			DiamondTrap::setName(std::string name){
 }
 
 void			DiamondTrap::whoAmI(void){
-	std::cout << "My name is: " + this->_name << std::endl;
-	std::cout << "My ClapTrap name is: " + this->ClapTrap::getName() << std::endl;
-	
+	if (this->getHitPoints() > 0){
+		std::cout << "My name is: " + this->_name << std::endl;
+		std::cout << "My ClapTrap name is: " + this->ClapTrap::getName() << std::endl;
+	} else {
+		std::cout << this->_name + " is dead." << std::endl;
+	}
+
 }

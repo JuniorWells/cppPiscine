@@ -3,10 +3,6 @@
 
 #include "ClapTrap.hpp"
 
-#define HP 100
-#define EP 50
-#define AD 20
-
 class ScavTrap : public virtual ClapTrap{
 
 	public:
@@ -21,9 +17,7 @@ class ScavTrap : public virtual ClapTrap{
 
 		void		attack(const std::string & target);
 		void		guardGate(void) const;
-	private:
 
-		std::string _name;
 };
 
 #endif

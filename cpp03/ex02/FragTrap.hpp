@@ -4,8 +4,8 @@
 #include "ClapTrap.hpp"
 
 #define HP 100
-#define EP 50
-#define AD 20
+#define EP 100
+#define AD 30
 
 class FragTrap : public ClapTrap{
 
@@ -22,12 +22,6 @@ class FragTrap : public ClapTrap{
 		void		attack(const std::string & target);
 		void		highFiveGuys(void) const;
 
-	private:
-
-		std::string _name;
-		int			_hitPoints;
-		int			_energyPoints;
-		int			_attackDamage;
 };
 
 #endif

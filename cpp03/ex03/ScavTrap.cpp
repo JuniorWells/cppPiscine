@@ -5,17 +5,17 @@
 ScavTrap::ScavTrap(){
 	std::cout << "ScavTrap constructor called" << std::endl;
 	this->setName("");
-	this->setHitPoints(HP);
-	this->setEnergyPoints(EP);
-	this->setAttackDamage(AD);
+	this->setHitPoints(MAX_HP);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 }
 
 ScavTrap::ScavTrap(std::string name) {
 	std::cout << "Name ScavTrap constructor called" << std::endl;
 	this->setName(name);
-	this->setHitPoints(HP);
-	this->setEnergyPoints(EP);
-	this->setAttackDamage(AD);
+	this->setHitPoints(MAX_HP);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 }
 
 ScavTrap::ScavTrap(std::string name, int hp, int ep, int ad) {
@@ -59,5 +59,8 @@ void	ScavTrap::attack(const std::string & target) {
 }
 
 void	ScavTrap::guardGate(void) const {
-	std::cout << "ScavTrap " << this->getName() << " is now in gatekeeper mode." << std::endl;
+	if (this->getHitPoints() > 0)
+		std::cout << this->getName() << " is now in gatekeeper mode." << std::endl;
+	else
+		std::cout << this->getName() + " is dead." << std::endl;
 }
