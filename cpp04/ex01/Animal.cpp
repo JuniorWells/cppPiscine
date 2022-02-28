@@ -1,7 +1,7 @@
 #include "Animal.hpp"
 
 Animal::Animal(void) {
-	std::cout << "Animal default constructor" << std::endl;
+	//std::cout << "Animal default constructor" << std::endl;
 }
 
 Animal::Animal(Animal const & src) {
@@ -10,7 +10,7 @@ Animal::Animal(Animal const & src) {
 }
 
 Animal::~Animal(void) {
-	std::cout << "Animal default destructor" << std::endl;
+	//std::cout << "Animal default destructor" << std::endl;
 }
 
 Animal&	Animal::operator=(Animal const & other) {

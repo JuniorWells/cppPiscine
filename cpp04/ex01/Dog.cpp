@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 
 Dog::Dog(void) {
-	std::cout << "Dog default constructor" << std::endl;
+	//std::cout << "Dog default constructor" << std::endl;
 	this->type = "Dog";
 	this->_brain = new Brain();
 }
@@ -12,7 +12,7 @@ Dog::Dog(Dog const & src) {
 }
 
 Dog::~Dog(void) {
-	std::cout << "Dog default destructor" << std::endl;
+	//std::cout << "Dog default destructor" << std::endl;
 	delete this->_brain;
 }
 

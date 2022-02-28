@@ -1,7 +1,7 @@
 #include "Brain.hpp"
 
 Brain::Brain(void) {
-	std::cout << "Brain default constructor" << std::endl;
+	//std::cout << "Brain default constructor" << std::endl;
 }
 
 Brain::Brain(Brain const & src) {
@@ -10,7 +10,7 @@ Brain::Brain(Brain const & src) {
 }
 
 Brain::~Brain(void) {
-	std::cout << "Brain destructor" << std::endl;
+	//std::cout << "Brain destructor" << std::endl;
 }
 
 Brain&	Brain::operator=(Brain const & other) {
