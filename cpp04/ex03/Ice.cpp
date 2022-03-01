@@ -1,17 +1,17 @@
 #include "Ice.hpp"
 
 Ice::Ice(void) {
-	std::cout << "Ice void constructor" << std::endl;
+	// std::cout << "Ice void constructor" << std::endl;
 	this->type = "ice";
 }
 
 Ice::Ice(Ice const & src) {
-	std::cout << "Ice name constructor" << std::endl;
+	// std::cout << "Ice name constructor" << std::endl;
 	*this = src;
 }
 
 Ice::~Ice(void) {
-	std::cout << "Ice void destructor" << std::endl;
+	// std::cout << "Ice void destructor" << std::endl;
 }
 
 Ice&	Ice::operator=(Ice const & other) {
@@ -26,5 +26,5 @@ AMateria*	Ice::clone(void) const {
 }
 
 void	Ice::use(ICharacter& target){
-	std::cout << this->type + " * shoots an ice bolt at " + target.getName() + " *" << std::endl;
+	std::cout << "* shoots an ice bolt at " + target.getName() + " *" << std::endl;
 }
