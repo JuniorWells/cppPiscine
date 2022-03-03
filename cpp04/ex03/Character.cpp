@@ -29,9 +29,9 @@ Character&	Character::operator=(Character const & src){
 		for (int i = 0; i < 4; i++) {
 			if (src._inv[i] == nullptr) { break; }
 			if (src._inv[i]->getType() == "ice") {
-				this->equip(new Ice());
+				this->_inv[i] = src._inv[i]->clone();
 			} else if (src._inv[i]->getType() == "cure") {
-				this->equip(new Cure());
+				this->_inv[i] = src._inv[i]->clone();
 			}
 		}
 	}

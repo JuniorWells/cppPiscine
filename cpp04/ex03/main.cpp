@@ -33,6 +33,9 @@ int		main() {
 	m.use(0, ch);
 	m.use(1, ch);
 	m.use(2, ch);
+
+	delete ice;
+	delete cure;
 	std::cout << std::endl << "###########################" << std::endl << std::endl;
 
 
