@@ -32,13 +32,12 @@ Form::~Form(void){
 
 Form&			Form::operator=(Form const & other) {
 	if (this != &other)
-		return *this;
+		//return *this;
 	return *this;
 }
 
-std::ostream&	operator<<(std::ostream o, Form & obj) {
-	return (o << "Form " + obj.getFormName() + " with sign grade " << obj.getSignGrade() << " and execution grade " 
-	<< obj.getExecGrade() << " is " << (( obj.getIsSigned()) ? " signed" : " not signed" ) << std::endl );
+std::ostream&	operator<<(std::ostream &o, Form & obj) {
+	return (o << "Form "+ obj.getFormName() + " with sign grade " << obj.getSignGrade() << " and execution grade " << obj.getExecGrade() << ( obj.getIsSigned() ? " is signed" : " is not signed" ));
 }
 
 // Getters

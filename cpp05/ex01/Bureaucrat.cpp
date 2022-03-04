@@ -44,7 +44,7 @@ Bureaucrat&		Bureaucrat::operator=(Bureaucrat const & other) {
 }
 
 std::ostream&	operator<<(std::ostream& o, Bureaucrat const & obj) {
-	return (o << obj.getName() + ", bureaucrat grade " << obj.getGrade() << std::endl);
+	return (o << obj.getName() + ", bureaucrat grade " << obj.getGrade());
 }
 
 // Getters
@@ -78,7 +78,7 @@ void	Bureaucrat::increment(void) {
 			this->_grade = this->getGrade() - 1;
 		}
 	} catch (Bureaucrat::GradeTooHighException& e) {
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what();
 	}
 }
 
@@ -91,7 +91,7 @@ void	Bureaucrat::decrement(void) {
 			this->_grade = this->getGrade() + 1;
 		}
 	} catch (Bureaucrat::GradeTooLowException& e) {
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what();
 	}
 }
 
