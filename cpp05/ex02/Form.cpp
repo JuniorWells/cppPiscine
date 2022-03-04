@@ -31,7 +31,8 @@ Form::~Form(void){
 // Operators
 
 Form&			Form::operator=(Form const & other) {
-	(void) other;
+	if (this != &other)
+		return *this;
 	return *this;
 }
 
@@ -59,17 +60,21 @@ bool			Form::getIsSigned(void) const {
 
 // Class Functions
 
-void	Form::beSigned(Bureaucrat const & b) {
+void	Form::beSigned(Bureaucrat const & b){
 	b.getGrade() <= this->getSignGrade() 
-		? this->_isSigned = true 
+		? this->_isSigned = true  
 		: throw Form::GradeTooLowException();
 }
 
 // Nested Classes
 const char * Form::GradeTooHighException::what() const throw () {
-	return ("Grade too high");
+	return ("Grade too high.");
 }
 
 const char * Form::GradeTooLowException::what() const throw () {
-	return ("Grade too low");
+	return ("Grade too low.");
+}
+
+const char * Form::NoSignRightsException::what() const throw () {
+	return ("No sign rights.");
 }

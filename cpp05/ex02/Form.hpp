@@ -11,7 +11,7 @@ class Form {
 		Form();
 		Form(std::string form, unsigned int sG, unsigned int eG);
 		Form(Form const & src);
-		~Form();
+		virtual ~Form();
 
 		Form&	operator=(Form const & other);
 
@@ -25,12 +25,19 @@ class Form {
 				const char * what() const throw ();
 		};
 
-		std::string		getFormName() const;
-		unsigned int	getSignGrade() const;
-		unsigned int	getExecGrade() const;
-		bool			getIsSigned() const;
+		class NoSignRightsException: public std::exception {
+			public:
+				const char * what() const throw ();
+		};
 
-		void			beSigned(Bureaucrat const & b);
+		virtual std::string		getFormName() const;
+		virtual unsigned int	getSignGrade() const;
+		virtual unsigned int	getExecGrade() const;
+		virtual bool			getIsSigned() const;
+
+		virtual void		beSigned(Bureaucrat const & b);
+
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 	
 	private:
 		const std::string	_formName;
