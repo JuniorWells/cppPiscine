@@ -1,43 +1,45 @@
-#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): Form("Presidential Pardon Form", 25, 5) {
+RobotomyRequestForm::RobotomyRequestForm(): Form("Robotomy Request Form", 72, 45) {
 	this->_target = "";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const target): Form("Presidential Pardon Form", 25, 5) {
+RobotomyRequestForm::RobotomyRequestForm(std::string const target): Form("Robotomy Request Form", 72, 45) {
 	this->_target = target;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) {
 	*this = src;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm(){
+RobotomyRequestForm::~RobotomyRequestForm(){
 
 }
 
-PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm const & src) {
+RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const & src) {
 	if (this != &src)
 		this->_target = src.getTarget();
 	return *this;
 }
 
-std::string	PresidentialPardonForm::getTarget(void) const{
+std::string	RobotomyRequestForm::getTarget(void) const{
 	return this->_target;
 }
 
-void		PresidentialPardonForm::execute(Bureaucrat const & executor) const{
+void		RobotomyRequestForm::execute(Bureaucrat const & executor) const{
 		if (this->getIsSigned() == false) {
-			std::cout << this->getFormName() + "needs signing. The incident will be reported." << std::endl;
+			throw Form::NoSignRightsException();
 		} else {
-			try {
-				if (this->getExecGrade() >= executor.getGrade()) {
-					std::cout << executor.getName() + " executed " + this->getFormName() << std::endl;
+			if (this->getExecGrade() >= executor.getGrade()) {
+				std::cout << "ZZzzzZZZzzZzz" << std::endl << "BBBBbbbbZZZzzzzZZz" << std::endl;
+				srand(time(NULL));
+				if ((rand() % 2) == 0) {
+					std::cout << this->getTarget() + " has been robotomized successfully" << std::endl;
 				} else {
-					throw Form::GradeTooLowException();
+					std::cout << "The robotomy failed" << std::endl;
 				}
-			} catch(Form::GradeTooLowException& e) {
-				std::cout << "Execution rejected. " << e.what() << std::endl;
+			} else {
+				throw Form::GradeTooLowException();
 			}
 		}
 }

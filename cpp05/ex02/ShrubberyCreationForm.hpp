@@ -2,6 +2,8 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include "Form.hpp"
+#include <fstream>
+#include <ios>
 
 class Bureaucrat;
 

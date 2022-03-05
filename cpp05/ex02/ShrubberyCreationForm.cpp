@@ -28,16 +28,43 @@ std::string	ShrubberyCreationForm::getTarget(void) const{
 
 void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 		if (this->getIsSigned() == false) {
-			std::cout << this->getFormName() + "needs signing. The incident will be reported." << std::endl;
+			throw Form::NoSignRightsException();
 		} else {
-			try {
-				if (this->getExecGrade() >= executor.getGrade()) {
-					std::cout << executor.getName() + " executed " + this->getFormName() << std::endl;
-				} else {
-					throw Form::GradeTooLowException();
+			if (this->getExecGrade() >= executor.getGrade()) {
+				std::ofstream file;
+				file.open(this->getTarget() + "_shrubbery");
+				if (file.is_open()) {
+					file << std::endl;
+					file << "      .              .              ;%     ;; " << std::endl;
+					file << "        ,           ,                :;%  %; " << std::endl;
+					file << "         :         ;                   :;%;'     ., " << std::endl;
+					file << ",.        %;     %;            ;        %;'    ,; " << std::endl;
+					file << "  ;       ;%;  %%;        ,     %;    ;%;    ,%' " << std::endl;
+					file << "   %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+					file << "    ;%;      %;        ;%;        % ;%;  ,%;' " << std::endl;
+					file << "     `%;.     ;%;     %;'         `;%%;.%;' " << std::endl;
+					file << "      `:;%.    ;%%. %@;        %; ;@%;%' " << std::endl;
+					file << "         `:%;.  :;bd%;          %;@%;' " << std::endl;
+					file << "           `@%:.  :;%.         ;@@%;' " << std::endl;
+					file << "             `@%.  `;@%.      ;@@%; " << std::endl;
+					file << "               `@%%. `@%%    ;@@%; " << std::endl;
+					file << "                 ;@%. :@%%  %@@%; " << std::endl;
+					file << "                   %@bd%%%bd%%:; " << std::endl;
+					file << "                     #@%%%%%:;; " << std::endl;
+					file << "                     %@@%%%::; " << std::endl;
+					file << "                     %@@@%(o);  . ' " << std::endl;
+					file << "                     %@@@o%;:(.,' " << std::endl;
+					file << "                 `.. %@@@o%::; " << std::endl;
+					file << "                    `)@@@o%::; " << std::endl;
+					file << "                     %@@(o)::; " << std::endl;
+					file << "                    .%@@@@%::; " << std::endl;
+					file << "                    ;%@@@@%::;. " << std::endl;
+					file << "                   ;%@@@@%%:;;;. " << std::endl;
+					file << "               ...;%@@@@@%%:;;;;,..  ";
 				}
-			} catch(Form::GradeTooLowException& e) {
-				std::cout << "Execution rejected. " << e.what() << std::endl;
+				file.close();
+			} else {
+				throw Form::GradeTooLowException();
 			}
 		}
 }

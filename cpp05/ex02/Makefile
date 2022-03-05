@@ -3,7 +3,7 @@ NAME = forms
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = $(addsuffix .cpp, main Bureaucrat Form PresidentialPardonForm)
+SRC = $(addsuffix .cpp, main Bureaucrat Form PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm)
 RM = rm -f
 
 all: $(NAME)
