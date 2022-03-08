@@ -19,7 +19,7 @@ Base*	generate(void) {
 
 	switch (r){
 		case 0:
-			return (new A());
+			return new A();
 		case 1:
 			return new B();
 		default:
@@ -59,5 +59,6 @@ int main() {
 	identify(pointer);
 	identify(*pointer); 
 
+	delete pointer;
 	return 0;
 }
