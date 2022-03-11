@@ -37,7 +37,7 @@ Form&			Form::operator=(Form const & other) {
 }
 
 std::ostream&	operator<<(std::ostream &o, Form & obj) {
-	return (o << "Form "+ obj.getFormName() + " with sign grade " << obj.getSignGrade() << " and execution grade " << obj.getExecGrade() << ( obj.getIsSigned() ? " is signed" : " is not signed" ));
+	return (o << obj.getFormName() + " with sign grade " << obj.getSignGrade() << " and execution grade " << obj.getExecGrade() << ( obj.getIsSigned() ? " is signed" : " is not signed" ));
 }
 
 // Getters

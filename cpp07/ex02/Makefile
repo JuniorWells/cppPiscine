@@ -3,7 +3,7 @@ NAME = array
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Array.tpp
 RM = rm -f
 
 all: $(NAME)
