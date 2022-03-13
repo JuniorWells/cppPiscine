@@ -6,11 +6,10 @@
 
 class Span {
 
-
 	public:
 		typedef	std::vector<int>::iterator iter;
 
-		Span(unsigned int N);
+		Span(uint N);
 		Span(Span const & src);
 		~Span();
 
@@ -32,17 +31,18 @@ class Span {
 		};
 
 		void				addNumber(int x);
-		void				addMultiple(int range, int x);
-		unsigned int		shortestSpan() const;
-		unsigned int		longestSpan() const;
+		void				fillEverything(void);
+		void				addMultiple(uint start, uint finish, int x);
+		uint				shortestSpan() const;
+		uint				longestSpan() const;
 
 
-		unsigned int		getSize() const;
+		uint				getSize() const;
 		std::vector<int>	getVector() const;
 
 	private:
 		std::vector<int>	_v;
-		unsigned int		_size;
+		uint				_size;
 		Span();
 
 };

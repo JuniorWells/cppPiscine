@@ -6,7 +6,7 @@ Span::Span(void): _size(0) {
 
 }
 
-Span::Span(unsigned int N): _size(N) {
+Span::Span(uint N): _size(N) {
 	try {
 		if (this->_v.max_size() <= N)
 			throw NoMemory();
@@ -37,7 +37,7 @@ Span::~Span(void) {
 
 // Getters
 
-unsigned int		Span::getSize(void) const {
+uint		Span::getSize(void) const {
 	return this->_size;
 }
 
@@ -57,12 +57,27 @@ void	Span::addNumber(int x) {
 	}
 }
 
-void	Span::addMultiple(int range, int x) {
-	while (range--)
-		this->addNumber(x);
+void	Span::fillEverything(void) {
+	srand(time(NULL));
+	for (uint i = 0; i < this->getSize(); ++i)
+		this->_v.push_back(rand());
 }
 
-unsigned int	Span::shortestSpan(void) const {
+void	Span::addMultiple(uint start, uint finish, int x) {
+	iter s = this->_v.begin() + start;
+	iter e = this->_v.begin() + finish;
+	try {
+		if (start > finish || s >= this->_v.end() || e >= this->_v.end() || finish >= this->getSize())
+			throw OutOfBounds();
+
+		for (iter i = s; i != e; i++)
+			*i = x;
+	} catch (OutOfBounds& e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+}
+
+uint	Span::shortestSpan(void) const {
 	std::vector<int>	v;
 	v = this->getVector();
 	int ret;
@@ -70,8 +85,8 @@ unsigned int	Span::shortestSpan(void) const {
 		throw NoSpanPossible();
 	else {
 		ret = std::abs(v[0] - v[1]);
-		for (unsigned int i = 0; i < v.size(); ++i) {
-			for (unsigned int j = i + 1; j < v.size(); ++j) {
+		for (uint i = 0; i < v.size(); ++i) {
+			for (uint j = i + 1; j < v.size(); ++j) {
 				if (std::abs(v[i] - v[j]) < ret) {
 					ret = std::abs(v[i] - v[j]);
 				}
@@ -81,7 +96,7 @@ unsigned int	Span::shortestSpan(void) const {
 	return ret;
 }
 
-unsigned int	Span::longestSpan(void) const {
+uint	Span::longestSpan(void) const {
 	std::vector<int>	v;
 	v = this->getVector();
 	int ret;
@@ -89,8 +104,8 @@ unsigned int	Span::longestSpan(void) const {
 		throw NoSpanPossible();
 	else {
 		ret = std::abs(v[0] - v[1]);
-		for (unsigned int i = 0; i < v.size(); ++i) {
-			for (unsigned int j = i + 1; j < v.size(); ++j) {
+		for (uint i = 0; i < v.size(); ++i) {
+			for (uint j = i + 1; j < v.size(); ++j) {
 				if (std::abs(v[i] - v[j]) > ret) {
 					ret = std::abs(v[i] - v[j]);
 				}

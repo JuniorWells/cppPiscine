@@ -33,17 +33,15 @@ int		main() {
 	s1.addNumber(2);
 
 	std::cout << std::endl << "10000 numbers" << std::endl;
-	Span s2(20);
-	//srand(time(NULL));
-	//for (unsigned int i = 0; i < s2.getSize(); ++i) {
-	//	s2.addNumber(rand());
-	//	std::cout << s2.getVector()[i] << std::endl;
-	//}
-	s2.addNumber(2);
-	s2.addMultiple(10, 5);
-
+	Span s2(10);
+	s2.fillEverything();
 	for (unsigned int i = 0; i < s2.getSize(); i ++)
 		std::cout << s2.getVector()[i] << std::endl;
+	
+	s2.addMultiple(4, 50, 4);
+
+	// for (unsigned int i = 0; i < s2.getSize(); i ++)
+	// 	std::cout << s2.getVector()[i] << std::endl;
 	//try {
 	//	std::cout << s2.shortestSpan() << std::endl;
 	//} catch (Span::NoSpanPossible& e) {
