@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <iostream>
-//#include <cmath>
 
 class Span {
 
@@ -45,7 +44,3 @@ class Span {
 		Span();
 
 };
-
-//std::ostream&	operator<<(std::ostream &o, Span const & obj){
-
-//}
