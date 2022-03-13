@@ -37,7 +37,7 @@ Span::~Span(void) {
 
 // Getters
 
-unsigned int	Span::getSize(void) const {
+unsigned int		Span::getSize(void) const {
 	return this->_size;
 }
 
@@ -55,6 +55,11 @@ void	Span::addNumber(int x) {
 	} catch (OutOfBounds& e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
+}
+
+void	Span::addMultiple(int range, int x) {
+	while (range--)
+		this->addNumber(x);
 }
 
 unsigned int	Span::shortestSpan(void) const {

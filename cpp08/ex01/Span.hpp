@@ -32,8 +32,10 @@ class Span {
 		};
 
 		void				addNumber(int x);
+		void				addMultiple(int range, int x);
 		unsigned int		shortestSpan() const;
 		unsigned int		longestSpan() const;
+
 
 		unsigned int		getSize() const;
 		std::vector<int>	getVector() const;
