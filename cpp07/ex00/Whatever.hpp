@@ -18,6 +18,3 @@ T	max(T& t, T& u) {
 	return (t > u ? t : u);
 }
 
-//std::ostream&	operator<<(std::stream & o, T const & r) {
-//	return (o << T);
-//}

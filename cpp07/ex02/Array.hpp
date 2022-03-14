@@ -14,7 +14,7 @@ class Array {
 		~Array();
 
 		Array&		operator=(Array<T> const & src);
-		T&		operator[](unsigned int i);
+		T&			operator[](unsigned int i);
 		T const &	operator[](unsigned int i) const;
 		class OutOfBounds: public std::exception {
 			public:
@@ -24,7 +24,7 @@ class Array {
 		unsigned int	size() const;
 
 	private:
-		T*		_array;
+		T*				_array;
 		unsigned int	_size;
 
 };

@@ -10,7 +10,10 @@ void	iter(T * arr, size_t len, T& (*foo)(T &)) {
 }
 
 template <typename T>
-T&	foo(T & elem) {	return ++elem; }
+T&	foo(T & elem) { return ++elem; }
+
+template <typename T>
+T&	redundant(T & elem) { std::cout <<  "Only for tourists: " << elem << std::endl; return elem;}
 
 
 #endif
