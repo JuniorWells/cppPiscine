@@ -2,7 +2,7 @@
 
 int		main(){
 	
-	std::cout << std::endl << "Integer: ";
+	std::cout << std::endl << "Integer" << std::endl;
 	std::list<int> l ;
 	l.push_front(9);
 	l.push_back(42);
@@ -14,7 +14,7 @@ int		main(){
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << std::endl << "Float: " ;
+	std::cout << std::endl << "Float" << std::endl;
 	std::list<float> f;
 	f.push_back(123);
 	f.push_back(12);
@@ -28,7 +28,7 @@ int		main(){
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << std::endl << "Character: ";
+	std::cout << std::endl << "Character" << std::endl;
 
 	std::list<char> c;
 	c.push_back('a');
@@ -41,7 +41,7 @@ int		main(){
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << std::endl << "Double: ";
+	std::cout << std::endl << "Double" << std::endl;
 
 	std::list<double> d;
 	d.push_back(2.4);

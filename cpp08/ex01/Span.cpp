@@ -84,14 +84,10 @@ uint	Span::shortestSpan(void) const {
 	if (v.size() <= 1)
 		throw NoSpanPossible();
 	else {
+		std::sort(v.begin(), v.end());
 		ret = std::abs(v[0] - v[1]);
-		for (uint i = 0; i < v.size(); ++i) {
-			for (uint j = i + 1; j < v.size(); ++j) {
-				if (std::abs(v[i] - v[j]) < ret) {
-					ret = std::abs(v[i] - v[j]);
-				}
-			}
-		}
+		for (iter i = v.begin(); i != v.end() - 1; ++i)
+			std::abs(*(i + 1) - *i) < ret ? ret = std::abs(*(i + 1) - *i) : ret;
 	}
 	return ret;
 }
@@ -112,7 +108,7 @@ uint	Span::longestSpan(void) const {
 			}
 		}
 	}
-	return ret;
+	return (ret);
 }
 
 // Exceptions

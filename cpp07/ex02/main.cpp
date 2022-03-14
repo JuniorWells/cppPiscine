@@ -12,7 +12,7 @@ int main(int, char**)
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
-		//std::cout << value << std::endl;
+		std::cout << value << std::endl;
     }
     //SCOPE
     {

@@ -5,7 +5,6 @@
 #include <list>
 
 class NotFound: public std::exception {
-
 	public:
 		const char * what() const throw() {
 			return "Not found in the list";

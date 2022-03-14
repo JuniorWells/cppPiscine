@@ -1,5 +1,6 @@
 #include "MutantClass.hpp"
 #include <iostream>
+#include <list>
 
 int main()
 {
@@ -25,5 +26,29 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	std::list<int> l;
+
+	l.push_back(5);
+	l.push_back(17);
+	std::cout << "TOP: " << l.back() << std::endl;
+	l.pop_back();
+	std::cout << "After pop: " << l.size() << std::endl;
+	l.push_back(3);
+	l.push_back(5);
+	l.push_back(737);
+	//[...]
+	l.push_back(0);
+	std::list<int>::iterator i = l.begin();
+	std::list<int>::iterator il = l.end();
+	++i;
+	--i;
+	while (i != il)
+	{
+		std::cout << "Value of *i: " << *i << std::endl;
+		++i;
+	}
+	std::list<int> a(l);
+
 	return 0;
 }
