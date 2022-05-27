@@ -2,4 +2,4 @@
 
 * C++ & OOP fundamentals
 
-* The PDFs provide a description for each module
+* The PDFs in the folders provide a description for each module
